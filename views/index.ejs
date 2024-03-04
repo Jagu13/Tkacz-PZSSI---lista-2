@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Messages</title>
+</head>
+<body>
+<!-- wyświetlanie książek na liście -->
+<% if (locals.message && locals.message.length > 0) { %>
+    <h1>List of books</h1>
+    <% for (let i = 0; i < message.length; i++) { %>
+        <ul>
+            <li><%= message[i].title %>, <%= message[i].author %></li>
+        </ul>
+    <% } %>
+<% } else { %> <!-- wyświetlanie jeśli lista książke jest pusta -->
+    <h1>List of books is empty</h1>
+<% } %>
+
+<!-- formularz dodający książkę do listy -->
+<form action="/msg/" method="post">
+    <label for="titlemessage">Add title: </label>
+    <input id="titlemessage" type="text" name="titlemessage" placeholder="Book's title">
+    <label for="authormessage">Add author: </label>
+    <input id="authormessage" type="text" name="authormessage" placeholder="Book's author">
+    <input type="submit" value="Add">
+</form>
+    <br><br>
+
+<!-- formularz usuwający książkę z listy -->
+<form action="/del" method="post">
+    <label for="deletemessage">Delete book: </label>
+    <input id="deletemessage" type="text" name="deletemessage" placeholder="Book's title">
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>
