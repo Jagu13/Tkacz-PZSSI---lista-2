@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit: <%= edit.title %> by <%= edit.author %></h1>
+    <form action="/edited" method="post">
+        <label for="titlemessage">Add new title: </label>
+        <input id="titlemessage" type="text" name="titlemessage" placeholder="Book's title">
+        <label for="authormessage">Add new author: </label>
+        <input id="authormessage" type="text" name="authormessage" placeholder="Book's author">
+        <input type="hidden" name="id" id="<%= edit.id %>" value=<%= edit.id %>>
+        <input type="submit" value="Save changes">
+    </form>
+</body>
+</html>

@@ -10,6 +10,9 @@
     <% for (let i = 0; i < message.length; i++) { %>
         <ul>
             <li><%= message[i].title %>, <%= message[i].author %></li>
+            <form action="/edit" method="post">
+                <input type="hidden" name="id" id="<%= message[i].id %>" value=<%= message[i].id %>><input type="submit" value="Edytuj">
+            </form>
         </ul>
     <% } %>
 <% } else { %> <!-- wyświetlanie jeśli lista książke jest pusta -->
